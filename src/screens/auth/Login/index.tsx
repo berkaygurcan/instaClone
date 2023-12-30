@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {
+  Alert,
   StyleSheet,
   Text,
   TextInput,
@@ -7,11 +8,31 @@ import {
   View,
 } from 'react-native';
 
+import {AddToStorage, StorageType} from '../../../utilities/StorageHelper';
+
 const Login = () => {
   const [password, onChangePassword] = useState('');
   const [input, onChangeText] = React.useState('');
 
-  const handleSubmit = () => {};
+  const handleSubmit = () => {
+    if (password === '1234' && input === 'Test') {
+      AddToStorage(StorageType.USERNAME, 'test');
+      //Handle navigation
+    } else {
+      alert();
+    }
+  };
+
+  const alert = () =>
+    Alert.alert('Alert Title', 'My Alert Msg', [
+      {
+        text: 'OK',
+        onPress: () => {
+          onChangePassword('');
+          onChangeText('');
+        },
+      },
+    ]);
 
   return (
     <View style={styles.container}>

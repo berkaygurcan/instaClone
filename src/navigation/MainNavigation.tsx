@@ -1,9 +1,10 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Home} from '../screens';
+import {Home, Explore} from '../screens';
 
 type MainNavigationParams = {
   Home: undefined;
+  Explore: undefined;
 };
 
 const Tab = createBottomTabNavigator<MainNavigationParams>();
@@ -13,15 +14,21 @@ const MainNavigation = () => {
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: 'red',
-        tabBarInactiveTintColor: 'blue',
+        tabBarActiveTintColor: 'purple',
+        tabBarInactiveTintColor: 'black',
+        tabBarIconStyle: {
+          display: 'none',
+        },
         tabBarLabelStyle: {
-          fontSize: 10,
+          fontSize: 12,
           fontFamily: 'MarkPro-Medium',
-          lineHeight: 13,
+
+          justifyContent: 'center',
+          alignItems: 'center',
         },
       }}>
       <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Explore" component={Explore} />
     </Tab.Navigator>
   );
 };

@@ -35,7 +35,7 @@ const Home = () => {
         'https://images.pexels.com/photos/19572849/pexels-photo-19572849/free-photo-of-evcil-hayvan-oturmak-ust-yuksek.jpeg?auto=compress&cs=tinysrgb&w=800',
       ],
       contentType: 'img',
-      likeCount: 10,
+      likeCount: 20,
     },
     {
       id: 3,
@@ -43,10 +43,10 @@ const Home = () => {
       profilePicUrl:
         'https://images.pexels.com/photos/2709388/pexels-photo-2709388.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
       content: [
-        'https://player.vimeo.com/video/881659498?title=0&portrait=0&byline=0&autoplay=1&muted=true',
+        'https://excite.videvo.net/videvo_files/video/premium/partners0689/large_watermarked/2808608_preview.mp4',
       ],
       contentType: 'video',
-      likeCount: 10,
+      likeCount: 50,
     },
   ];
 

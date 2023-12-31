@@ -4,15 +4,15 @@ import PostHeader from './components/PostHeader';
 import BottomBar from './components/BottomBar';
 import SwiperComponent from './components/SwiperComponent';
 
-const Post = () => {
+const Post = ({item}: any) => {
   return (
     <>
       <View style={styles.container}>
-        <PostHeader />
-        <SwiperComponent />
+        <PostHeader name={item.name} ppUrl={item.profilePicUrl} />
+        <SwiperComponent content={item.content} />
         <BottomBar />
       </View>
-      <Text style={styles.likesStyle}>100 likes</Text>
+      <Text style={styles.likesStyle}>{item.likeCount} likes</Text>
     </>
   );
 };

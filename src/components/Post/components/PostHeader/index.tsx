@@ -1,17 +1,18 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, View} from 'react-native';
+import Typography from '../../../Typography';
 
-const PostHeader = () => {
+const PostHeader = ({name, ppUrl}: any) => {
   return (
     <View style={styles.postHeaderContainer}>
       <View style={styles.avatarInfo}>
         <Image
           style={styles.avatar}
           source={{
-            uri: 'https://reactnative.dev/img/tiny_logo.png',
+            uri: ppUrl,
           }}
         />
-        <Text>Ruffles</Text>
+        <Typography text={name} />
       </View>
       <Image
         style={styles.ellipsis}

@@ -1,39 +1,12 @@
-import React, {useState} from 'react';
-import {
-  Alert,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import React from 'react';
+import {StyleSheet, TextInput, TouchableOpacity, View} from 'react-native';
 
-import {AddToStorage, StorageType} from '../../../utilities/StorageHelper';
+import Typography from '../../../components/Typography';
+import LoginHooks from './hooks';
 
 const Login = () => {
-  const [password, onChangePassword] = useState('');
-  const [input, onChangeText] = React.useState('');
-
-  const handleSubmit = () => {
-    if (password === '1234' && input === 'Test') {
-      AddToStorage(StorageType.USERNAME, 'test');
-      //Handle navigation
-    } else {
-      alert();
-    }
-  };
-
-  const alert = () =>
-    Alert.alert('Alert Title', 'My Alert Msg', [
-      {
-        text: 'OK',
-        onPress: () => {
-          onChangePassword('');
-          onChangeText('');
-        },
-      },
-    ]);
-
+  const {handleSubmit, password, onChangePassword, input, onChangeText} =
+    LoginHooks();
   return (
     <View style={styles.container}>
       <TextInput
@@ -49,10 +22,13 @@ const Login = () => {
         value={password}
         placeholder="password"
       />
+      <Typography
+        style={styles.forgotPassTextStyle}
+        text={'Forgot password?'}
+      />
 
-      <Text style={styles.forgotPassTextStyle}>Forgot password?</Text>
       <TouchableOpacity style={styles.btn} onPress={handleSubmit}>
-        <Text style={styles.btnTextStyle}>Login</Text>
+        <Typography style={styles.btnTextStyle} text={'Login'} />
       </TouchableOpacity>
     </View>
   );

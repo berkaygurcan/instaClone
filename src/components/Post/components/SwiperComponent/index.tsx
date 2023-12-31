@@ -3,32 +3,24 @@ import {Dimensions, Image, StyleSheet, View} from 'react-native';
 import Swiper from 'react-native-swiper';
 const {width} = Dimensions.get('window');
 
-const SwiperComponent = () => {
+const SwiperComponent = ({content}: any) => {
   return (
     <Swiper
       dot={<View style={styles.dotStyle} />}
       activeDot={<View style={styles.activeDotStyle} />}
       paginationStyle={styles.paginationStyle}
       loop={false}>
-      <View style={styles.slide}>
-        <Image
-          resizeMode="stretch"
-          style={styles.image}
-          source={{
-            uri: 'https://reactnative.dev/img/tiny_logo.png',
-          }}
-        />
-      </View>
-
-      <View style={styles.slide}>
-        <Image
-          resizeMode="stretch"
-          style={styles.image}
-          source={{
-            uri: 'https://reactnative.dev/img/tiny_logo.png',
-          }}
-        />
-      </View>
+      {content.map(url => (
+        <View style={styles.slide}>
+          <Image
+            resizeMode="contain"
+            style={styles.image}
+            source={{
+              uri: url,
+            }}
+          />
+        </View>
+      ))}
     </Swiper>
   );
 };

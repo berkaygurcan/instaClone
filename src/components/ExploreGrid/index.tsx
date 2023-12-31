@@ -2,7 +2,7 @@ import React from 'react';
 import {Dimensions, Image, StyleSheet, View} from 'react-native';
 import VideoPlayer from '../Post/components/VideoPlayer';
 
-const ExploreGrid = ({rowReverse}: any) => {
+const ExploreGrid = ({rowReverse, contents}: any) => {
   return (
     <View style={[styles.container, rowReverse && styles.rowReverse]}>
       <View style={styles.imagesContainer}>
@@ -11,13 +11,13 @@ const ExploreGrid = ({rowReverse}: any) => {
           <Image
             style={styles.image}
             source={{
-              uri: 'https://reactnative.dev/img/tiny_logo.png',
+              uri: contents[0].url,
             }}
           />
           <Image
             style={styles.image}
             source={{
-              uri: 'https://reactnative.dev/img/tiny_logo.png',
+              uri: contents[1].url,
             }}
           />
         </View>
@@ -25,23 +25,19 @@ const ExploreGrid = ({rowReverse}: any) => {
           <Image
             style={styles.image}
             source={{
-              uri: 'https://reactnative.dev/img/tiny_logo.png',
+              uri: contents[2].url,
             }}
           />
           <Image
             style={styles.image}
             source={{
-              uri: 'https://reactnative.dev/img/tiny_logo.png',
+              uri: contents[3].url,
             }}
           />
         </View>
       </View>
       <View style={styles.videoPlayerContainer}>
-        <VideoPlayer
-          url={
-            'https://assets.mixkit.co/videos/preview/mixkit-a-futuristic-robot-slowly-morphs-under-laser-beams-and-ethereal-51519-large.mp4'
-          }
-        />
+        <VideoPlayer url={contents[4].url} />
       </View>
     </View>
   );

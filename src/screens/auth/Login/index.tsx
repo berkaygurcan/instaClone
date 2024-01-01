@@ -1,22 +1,23 @@
 import React from 'react';
-import {StyleSheet, TextInput, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, TouchableOpacity, View} from 'react-native';
 
 import Typography from '../../../components/Typography';
 import LoginHooks from './hooks';
+import CustomTextInput from '../../../components/CustomTextInput';
 
 const Login = () => {
   const {handleSubmit, password, onChangePassword, input, onChangeText} =
     LoginHooks();
   return (
     <View style={styles.container}>
-      <TextInput
+      <CustomTextInput
         style={styles.input}
         value={input}
         onChangeText={onChangeText}
         keyboardType="email-address"
         placeholder="phone number,username, or email"
       />
-      <TextInput
+      <CustomTextInput
         onChangeText={onChangePassword}
         style={styles.input}
         value={password}

@@ -1,18 +1,21 @@
 import React from 'react';
-import {StyleSheet, View, ScrollView, TextInput} from 'react-native';
+import {StyleSheet, View, ScrollView} from 'react-native';
 import ExploreGrid from '../../../components/ExploreGrid';
 import {mockExploreData} from '../../../config/mockData';
 import CustomImage from '../../../components/CustomImage';
+import CustomTextInput from '../../../components/CustomTextInput';
 
 const Explore = () => {
   return (
     <View style={styles.container}>
       {/* explore header */}
       <View style={styles.headerContainer}>
-        <TextInput
+        <CustomTextInput
           style={styles.input}
           keyboardType="email-address"
           placeholder="search"
+          value={''}
+          onChangeText={function (text: string): void {}}
         />
         <CustomImage
           style={styles.tinyLogo}

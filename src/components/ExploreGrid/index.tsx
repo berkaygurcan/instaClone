@@ -12,13 +12,13 @@ const ExploreGrid = ({rowReverse, contents}: any) => {
           <CustomImage
             style={styles.image}
             source={{
-              uri: contents[0].url,
+              uri: contents[0]?.url || undefined,
             }}
           />
           <CustomImage
             style={styles.image}
             source={{
-              uri: contents[1].url,
+              uri: contents[1]?.url || undefined,
             }}
           />
         </View>
@@ -26,19 +26,19 @@ const ExploreGrid = ({rowReverse, contents}: any) => {
           <CustomImage
             style={styles.image}
             source={{
-              uri: contents[2].url,
+              uri: contents[2]?.url || undefined,
             }}
           />
           <CustomImage
             style={styles.image}
             source={{
-              uri: contents[3].url,
+              uri: contents[3]?.url || undefined,
             }}
           />
         </View>
       </View>
       <View style={styles.videoPlayerContainer}>
-        <VideoPlayer url={contents[4].url} />
+        <VideoPlayer url={contents[4]?.url || undefined} />
       </View>
     </View>
   );

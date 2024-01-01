@@ -1,11 +1,13 @@
 import React from 'react';
 import {StyleSheet, View, ScrollView} from 'react-native';
 import ExploreGrid from '../../../components/ExploreGrid';
-import {mockExploreData} from '../../../config/mockData';
 import CustomImage from '../../../components/CustomImage';
 import CustomTextInput from '../../../components/CustomTextInput';
+import Typography from '../../../components/Typography';
+import ExploreHooks from './hooks';
 
 const Explore = () => {
+  const {searchText, setSearchText, displayData} = ExploreHooks();
   return (
     <View style={styles.container}>
       {/* explore header */}
@@ -14,8 +16,8 @@ const Explore = () => {
           style={styles.input}
           keyboardType="email-address"
           placeholder="search"
-          value={''}
-          onChangeText={function (text: string): void {}}
+          value={searchText}
+          onChangeText={text => setSearchText(text)}
         />
         <CustomImage
           style={styles.tinyLogo}
@@ -24,13 +26,20 @@ const Explore = () => {
       </View>
       {/* instagram explore grid */}
       <ScrollView>
-        {mockExploreData.map(item => (
+        {displayData.map(item => (
           <ExploreGrid contents={item.items} rowReverse={item.id % 2 === 0} />
         ))}
+        {displayData.length === 0 && <NoResultsMessage />}
       </ScrollView>
     </View>
   );
 };
+
+const NoResultsMessage = () => (
+  <View style={styles.noResultsContainer}>
+    <Typography text={'No results found.'} />
+  </View>
+);
 
 const styles = StyleSheet.create({
   container: {
@@ -49,7 +58,6 @@ const styles = StyleSheet.create({
     width: 20,
     height: 20,
   },
-
   input: {
     width: '90%',
     height: 42,
@@ -58,6 +66,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     borderColor: '#E0DDDD',
     marginVertical: 8,
+  },
+  noResultsContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 20,
   },
 });
 

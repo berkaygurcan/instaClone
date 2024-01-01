@@ -1,24 +1,25 @@
 import React from 'react';
-import {Image, StyleSheet, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
+import CustomImage from '../../../CustomImage';
 
 const BottomBar = () => {
   return (
     <View style={styles.bottomIcons}>
       <View style={styles.leftIcons}>
-        <Image
+        <CustomImage
           style={styles.icon}
           source={require('../../../../common/assets/icons/hearth.png')}
         />
-        <Image
+        <CustomImage
           style={styles.icon}
           source={require('../../../../common/assets/icons/comment.png')}
         />
-        <Image
+        <CustomImage
           style={styles.icon}
           source={require('../../../../common/assets/icons/send.png')}
         />
       </View>
-      <Image
+      <CustomImage
         style={styles.icon}
         source={require('../../../../common/assets/icons/bookmark.png')}
       />

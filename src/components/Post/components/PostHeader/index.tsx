@@ -1,12 +1,13 @@
 import React from 'react';
-import {Image, StyleSheet, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import Typography from '../../../Typography';
+import CustomImage from '../../../CustomImage';
 
 const PostHeader = ({name, ppUrl}: any) => {
   return (
     <View style={styles.postHeaderContainer}>
       <View style={styles.avatarInfo}>
-        <Image
+        <CustomImage
           style={styles.avatar}
           source={{
             uri: ppUrl,
@@ -14,7 +15,7 @@ const PostHeader = ({name, ppUrl}: any) => {
         />
         <Typography text={name} />
       </View>
-      <Image
+      <CustomImage
         style={styles.ellipsis}
         source={require('../../../../common/assets/icons/ellipsis.png')}
       />

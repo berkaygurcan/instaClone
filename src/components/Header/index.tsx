@@ -1,17 +1,18 @@
 import React from 'react';
-import {Image, StyleSheet, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import Typography from '../Typography';
+import CustomImage from '../CustomImage';
 
 const Header = () => {
   return (
     <View style={styles.headerContainer}>
       <Typography text={'Senin İçin'} />
       <View style={styles.iconsContainer}>
-        <Image
+        <CustomImage
           style={styles.tinyLogo}
           source={require('../../common/assets/icons/hearth.png')}
         />
-        <Image
+        <CustomImage
           style={styles.tinyLogo}
           source={require('../../common/assets/icons/messenger.png')}
         />

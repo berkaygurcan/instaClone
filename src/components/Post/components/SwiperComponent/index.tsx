@@ -1,6 +1,7 @@
 import React from 'react';
-import {Dimensions, Image, StyleSheet, View} from 'react-native';
+import {Dimensions, StyleSheet, View} from 'react-native';
 import Swiper from 'react-native-swiper';
+import CustomImage from '../../../CustomImage';
 const {width} = Dimensions.get('window');
 
 const SwiperComponent = ({content}: any) => {
@@ -12,7 +13,7 @@ const SwiperComponent = ({content}: any) => {
       loop={false}>
       {content.map(url => (
         <View style={styles.slide}>
-          <Image
+          <CustomImage
             resizeMode="contain"
             style={styles.image}
             source={{

@@ -1,6 +1,7 @@
 import React from 'react';
-import {Dimensions, Image, StyleSheet, View} from 'react-native';
+import {Dimensions, StyleSheet, View} from 'react-native';
 import VideoPlayer from '../Post/components/VideoPlayer';
+import CustomImage from '../CustomImage';
 
 const ExploreGrid = ({rowReverse, contents}: any) => {
   return (
@@ -8,13 +9,13 @@ const ExploreGrid = ({rowReverse, contents}: any) => {
       <View style={styles.imagesContainer}>
         {/* images */}
         <View style={styles.gap2}>
-          <Image
+          <CustomImage
             style={styles.image}
             source={{
               uri: contents[0].url,
             }}
           />
-          <Image
+          <CustomImage
             style={styles.image}
             source={{
               uri: contents[1].url,
@@ -22,13 +23,13 @@ const ExploreGrid = ({rowReverse, contents}: any) => {
           />
         </View>
         <View style={styles.gap2}>
-          <Image
+          <CustomImage
             style={styles.image}
             source={{
               uri: contents[2].url,
             }}
           />
-          <Image
+          <CustomImage
             style={styles.image}
             source={{
               uri: contents[3].url,

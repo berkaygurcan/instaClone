@@ -1,7 +1,8 @@
 import React from 'react';
-import {StyleSheet, View, ScrollView, TextInput, Image} from 'react-native';
+import {StyleSheet, View, ScrollView, TextInput} from 'react-native';
 import ExploreGrid from '../../../components/ExploreGrid';
 import {mockExploreData} from '../../../config/mockData';
+import CustomImage from '../../../components/CustomImage';
 
 const Explore = () => {
   return (
@@ -13,7 +14,7 @@ const Explore = () => {
           keyboardType="email-address"
           placeholder="search"
         />
-        <Image
+        <CustomImage
           style={styles.tinyLogo}
           source={require('../../../common/assets/icons/ellipsis.png')}
         />

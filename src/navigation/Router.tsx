@@ -1,23 +1,19 @@
 import React, {useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {GetFromStorage, StorageType} from '../utilities/StorageHelper';
 import MainNavigation from './MainNavigation';
 import AuthNavigation from './AuthNavigation';
+import useAuthStore from '../store/authStore';
 
 const Router = () => {
+  const {isLogin, init} = useAuthStore();
+
   useEffect(() => {
     init();
   }, []);
 
-  let isLogin = '';
-
-  const init = async () => {
-    isLogin = (await GetFromStorage(StorageType.USERNAME)) || '';
-  };
-
   return (
     <NavigationContainer>
-      {!isLogin === 'test' ? <AuthNavigation /> : <MainNavigation />}
+      {isLogin === 'test' ? <MainNavigation /> : <AuthNavigation />}
     </NavigationContainer>
   );
 };

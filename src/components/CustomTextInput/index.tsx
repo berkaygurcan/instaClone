@@ -25,6 +25,7 @@ const CustomTextInput: React.FC<CustomTextInputProps> = ({
 }) => {
   return (
     <TextInput
+      testID="textInput"
       style={[styles.input, style]} // Dışarıdan gelen stil ile birleştirme
       value={value}
       onChangeText={onChangeText}

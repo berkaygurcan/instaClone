@@ -22,6 +22,7 @@ const CustomImage: React.FC<CustomImageProps> = ({
 }) => {
   return (
     <Image
+      testID="custom-image"
       style={[styles.image, style]}
       source={source}
       resizeMode={resizeMode} // resizeMode prop'u burada doğrudan kullanıldı
